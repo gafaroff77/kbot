@@ -6,5 +6,5 @@ This project [hosted on GitHub](https://github.com/gafaroff77/kbot), write on go
 and use [cobra](github.com/spf13/cobra) and [telebot](gopkg.in/telebot.v3)
 
 You can check bot on [this link](https://t.me/gafaroff77_kbot)
-###but!
+### but!
 You must message me before this - it still needs for run :wink:
