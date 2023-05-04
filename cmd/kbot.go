@@ -49,9 +49,9 @@ to quickly create a Cobra application.`,
 			case "hello":
 				err = m.Send(fmt.Sprintf("Hello! I'm kbot %s", appVersion))
 			case "test":
-				err = m.Send(fmt.Sprint("Yep, test passed."))
+				err = m.Send("Yep, test passed.")
 			default:
-				err = m.Send(fmt.Sprint("I don't understand. Specify the request."))
+				err = m.Send("What you mean? Specify the request.")
 			}
 
 			return err
