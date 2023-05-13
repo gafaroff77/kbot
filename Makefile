@@ -22,5 +22,10 @@ build: clean format get
 clean:
 	rm -rf ${BINARY}
 
+gitconn:
+	eval ${shell ssh-agent -s}
+	ssh-add ~/.ssh/gafdell2github
+	ssh -T git@github.com
+
 commentary:
 	docker build . -t kbot_$(git describe --tags --abbrev=0 HEAD)-$(git rev-parse --short HEAD)
