@@ -6,11 +6,11 @@ BINARY=kbot
 #TARGETARCH=$(shell dpkg --print-architecture)
 TARGETARCH=arm64
 
-format:
-	gofmt -s -w ./
-
 lint:
 	golint
+
+format: lint
+	gofmt -s -w ./
 
 test:
 	go test -v
@@ -34,6 +34,3 @@ gitconn:
 	eval ${shell ssh-agent -s}
 	ssh-add ~/.ssh/gafdell2github
 	ssh -T git@github.com
-
-commentary:
-	docker build . -t kbot_$(git describe --tags --abbrev=0 HEAD)-$(git rev-parse --short HEAD)
